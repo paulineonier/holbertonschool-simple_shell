@@ -23,7 +23,7 @@ void remove_newline(char *str)
 	}
 }
 
-void execute_command(char *command)
+void _execute(char *command)
 {	
 	char *args[2];
 	args[0] = command;

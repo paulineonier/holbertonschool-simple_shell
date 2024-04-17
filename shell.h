@@ -6,10 +6,12 @@
 void _prompt(void);
 size_t read_input(char **line, size_t *len);
 void remove_newline(char *str);
-void execute_command(char *command);
-char *_path(char *line);
+char *path(char *line);
 char **get_argument(char *line);
 char *_env(const char *name);
+void execute_command(char **array_command, int nbr_command);
+void free_args(char **array_command);
+void _execute(char *command);
 
 #include <stdio.h>
 #include <stdlib.h>

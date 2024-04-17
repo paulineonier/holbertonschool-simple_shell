@@ -1,42 +1,51 @@
-#include "shell.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
+#define MAX_INPUT_SIZE 1024
 
-int main(void)
+int main() 
 {
-	char *line = NULL;
-	size_t len = 0;
-	size_t read;
+    char input[MAX_INPUT_SIZE];
+    char *args[2];
+    pid_t pid;
 
-	while (1)
-	{
-		pid_t pid;
+    while (1) 
+    {
+        printf("$ ");
+        fflush(stdout); 
+        
+        if (fgets(input, sizeof(input), stdin) == NULL) 
+        {
+            /* Gérer la fin du fichier (Ctrl+D) */
+            printf("\n");
+            break;
+        }
+        input[strcspn(input, "\n")] = '\0';
 
-		_prompt();
-		read = read_input(&line, &len);
+        args[0] = input;
+        args[1] = NULL;
+      
+	pid = fork();
+        if (pid < 0) 
+        {
+            perror("fork");
+            exit(EXIT_FAILURE);
+        } 
+        else if (pid == 0) 
+        {
+        if (execvp(args[0], args) == -1) 
+            {
+            perror("execvp");
+                exit(EXIT_FAILURE);
+            }
+        } 
+        else 
+        {
+            wait(NULL);
+        }
+    }
 
-		if (read == 0)
-		{
-			printf("\n");
-			break;
-		}
-
-		remove_newline(line);
-
-		pid = fork();
-
-		if (pid == -1)
-		{
-			perror("Fork failed");
-			free(line);
-			exit(EXIT_FAILURE);
-		}
-
-		if (pid == 0)
-		{
-			execute_command(line);
-			free(line);
-			exit(EXIT_FAILURE);
-		}
-	}
-	return (0);
+    return 0;
 }

@@ -9,7 +9,7 @@
  * Return: the handle the path
  */
 
-char *_path(char *line)
+char *path(char *line)
 {
 	char *path;
 	int length_line;
