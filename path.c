@@ -19,7 +19,7 @@ char *_path(char *command)
 		if (command[i] == '/')
 		{
 			if (stat(command, &buf) == 0)
-				return (my_strdup(command));
+				return (_strdup(command));
 			return (NULL);
 		}
 	}

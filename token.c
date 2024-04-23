@@ -11,9 +11,10 @@ char **_str(char *line)
 {
 	char *token, *delim = " \t\n", *tmp = NULL, **command = NULL;
 	int count = 0, i = 0;
+	
 	if (!line)
 		return (NULL);
-	tmp = my_strdup(line);
+	tmp = _strdup(line);
 	token = strtok(tmp, delim);
 	if (token == NULL)
 	{
@@ -37,7 +38,7 @@ char **_str(char *line)
 	token = strtok(line, delim);
 	while (token)
 	{
-		command[i] = my_strdup(token);
+		command[i] = _strdup(token);
 		token = strtok(NULL, delim);
 		i++;
 	}

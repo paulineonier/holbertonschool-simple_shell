@@ -1,11 +1,11 @@
 #include "shell.h"
 /**
- * my_strdup - string duplicate
+ * _strdup - string duplicate
  * @s: const char
  * Return: Always 0.
  */
 
-char *my_strdup(const char *s)
+char *_strdup(const char *s)
 {
 	size_t len = strlen(s) + 1;
 	char *new_str = (char *)malloc(len);

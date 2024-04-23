@@ -10,12 +10,12 @@
 
 extern char **environ;
 char *read_line(void);
-int is_built_in(char **command);
+int built_in(char **command);
 void handle_built_in(char **command, int *status);
 void hsh_exit(char **cmd, int *status);
 char *_path(char *command);
 char *get_env(char *var);
-char *my_strdup(const char *s);
+char *_strdup(const char *s);
 char **_str(char *line);
 void free_array(char **command);
 int exec(char **arr, char **av, int idx);
