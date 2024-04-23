@@ -1,0 +1,58 @@
+.\" Manpage for simple_shell
+.TH simple_shell  "April 2024" "User Commands"
+
+.SH NAME
+simple_shell \- Holberton School project shell
+
+.SH SYNOPSIS
+.B #include <shell.h>
+.sp
+.B int main(__attribute__((unused)) int ac, char **av);
+
+.SH DESCRIPTION
+simple_shell is a basic Unix shell developed as a project for Holberton School. It provides a command-line interface for users to interact with the operating system.
+
+.SH COMMANDS
+	The shell supports various standard shell commands, including and not limited to:
+
+       - cd: Change directory
+       - ls: List directory contents
+       - pwd: Print current working directory
+       - echo: Display a message
+       - exit: Exit the shell
+
+.SH EXAMPLES
+
+root@6ac878ffb3ee4b17827c2f0366fbd37a-2377118072:~/holbertonschool-simple_shell# gcc -Wall -Werror -Wextra -pedantic -std=gnu89 exevce.c free.c read.c getenv.c path.c shell.h strdup.c token.c simple_shell.c build.c -o hsh
+root@6ac878ffb3ee4b17827c2f0366fbd37a-2377118072:~/holbertonschool-simple_shell# ./hsh
+$ ls -l
+total 68
+-rw-r--r-- 1 root root     2 Apr 23 12:46 README.md
+-rw-r--r-- 1 root root  1453 Apr 23 12:54 build.c
+-rw-r--r-- 1 root root   844 Apr 23 12:55 exevce.c
+-rw-r--r-- 1 root root   321 Apr 23 12:48 free.c
+-rw-r--r-- 1 root root   705 Apr 23 13:03 getenv.c
+-rwxr-xr-x 1 root root 17464 Apr 23 13:09 hsh
+-rw-r--r-- 1 root root   859 Apr 23 13:08 man_page.c
+-rw-r--r-- 1 root root   994 Apr 23 12:59 path.c
+-rw-r--r-- 1 root root   454 Apr 23 12:50 read.c
+-rw-r--r-- 1 root root   629 Apr 23 12:58 shell.h
+-rw-r--r-- 1 root root   700 Apr 23 12:56 simple_shell.c
+-rw-r--r-- 1 root root   279 Apr 23 12:57 strdup.c
+-rw-r--r-- 1 root root   900 Apr 23 13:02 token.c
+$ ls
+README.md  exevce.c  getenv.c  man_page.c  read.c   simple_shell.c  token.c
+build.c    free.c    hsh       path.c      shell.h  strdup.c
+$ 
+
+.SH DATE
+
+April 26, 2024
+
+.SH BUGS 
+	No know bugs
+
+.SH AUTHORS
+        SYLLA Selimata, 
+	ONIER Pauline, 
+	LAURIER Aline
