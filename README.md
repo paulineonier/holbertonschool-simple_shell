@@ -36,14 +36,14 @@ handles the Ctrl + c signal -> it does not leave the shell
 
 # Files description
 - Shell.h -> header file
-- simple_shell.c -> main function main:
-- execve.c ->
-- token.c -> strdup.c ->
-- free.c ->
-- read.c ->
-- path.c ->
-- build.c ->
-- getenv.c ->
+- simple_shell.c -> main function main: to enter command system and execute 
+- execve.c -> execute extern commands in the shell
+- token.c -> strdup.c -> duplicate string and cut it in tokens
+- free.c -> free the memory allocate for a 2D array
+- read.c -> reads input line from the user and keep it in buffer 
+- path.c -> looks for the absolute path of an executable 
+- build.c -> used to handle build-in commands
+- getenv.c -> get value of environment variable used to keep informations such as configuration parameters etc
 
 # List of allowed functions and system calls for this project
 - all functions from string.h
