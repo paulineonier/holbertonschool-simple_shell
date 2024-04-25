@@ -176,6 +176,9 @@ But also in non-interactive mode:
 - hsh main.c shell.c test_ls_2
 - $
 
+# Flowchart
+<img src="blob:chrome-untrusted://media-app/c12a6003-47a7-43f8-86be-d9427a85a217" alt="Screenshot 2024-04-25 14.45.49.png"/>![image](https://github.com/paulineonier/holbertonschool-simple_shell/assets/156083689/be31e0f1-8b54-4110-9c6a-a4326f3eefbb)
+
 # Exemple usage
 - root@9e07271f045e4bdfa379799071e5c5c9-2377118072:/holbertonschool-simple_shell# gcc -Wall -Werror -Wextra -pedantic -std=gnu89 build.c exevce.c free.c getenv.c path.c read.c shell.h simple_shell.c strdup.c token.c -o hsh
 - root@9e07271f045e4bdfa379799071e5c5c9-2377118072:/holbertonschool-simple_shell# ./hsh
